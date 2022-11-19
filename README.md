@@ -3,15 +3,22 @@
 ## Alapkövetelmények:
 Mielőtt lehúzod a projektet telepítsd ezeket:
 - Git: https://git-scm.com/downloads
-- Node: https://nodejs.org/en/
+- Node: https://nodejs.org/en/ (érdemes az LTS verziót használni)
 
-## Projekt futtatása:
+## Projekt inicializálása:
 - git clone
 - npm install
 - npm run
 
 ## Branch védelem:
 - Védett mappa: main
+
+## Mielőtt bármit is csinálnál!
+Ellenőrizd, hogy a legfrissebb verzióval dolgozol-e!
+- git checkout main
+- **git status**<br/>
+Megmutatja, hogy hol áll a projekted.<br/>
+Ha nem a legfrissebb verzióval dolgozol akkor: **git pull**
 
 ## Push folyamata:
 - Melyik branchen vagyunk? **git branch**
@@ -25,3 +32,13 @@ Mielőtt lehúzod a projektet telepítsd ezeket:
 - TypeScript
 - TailwindCSS
 - GitHub Pages
+
+## Eszközök:
+Fejlesztői környezetre ajánlott JetBrains termékeket használni:
+- IntelliJ Community Edition
+
+Van lehetőség arra is, hogy diák licence-t aktiválj. Ebben az esetben elérhető más IDE is:
+- PhpStorm
+- WebStorm
+
+Említés szintjén a VSCode-ot hoznám fel, de ha lehet a JetBrains termékeket részesítsük előnyben.
