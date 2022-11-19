@@ -1,5 +1,10 @@
 # Beadandó projekt
 
+## Alapkövetelmények:
+Mielőtt lehúzod a projektet telepítsd ezeket:
+- Git: https://git-scm.com/downloads
+- Node: https://nodejs.org/en/
+
 ## Projekt futtatása:
 - git clone
 - npm install
