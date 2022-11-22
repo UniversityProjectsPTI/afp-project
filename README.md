@@ -3,15 +3,15 @@
 ## Alapkövetelmények:
 Mielőtt lehúzod a projektet telepítsd ezeket:
 - Git: https://git-scm.com/downloads
-- Node: https://nodejs.org/en/ (érdemes az LTS verziót használni)
+- Node: https://nodejs.org/en/ (érdemes az LTS verziót használni, minimum v16)
 
 ## Projekt inicializálása:
-- git clone
+- git clone url
 - npm install
-- npm run
+- npm run start
 
 ## Branch védelem:
-- Védett mappa: main
+- Védett branch: main
 
 ## Mielőtt bármit is csinálnál!
 Ellenőrizd, hogy a legfrissebb verzióval dolgozol-e!
@@ -31,7 +31,6 @@ Ha nem a legfrissebb verzióval dolgozol akkor: **git pull**
 - React
 - TypeScript
 - TailwindCSS
-- GitHub Pages
 
 ## Eszközök:
 Fejlesztői környezetre ajánlott JetBrains termékeket használni:

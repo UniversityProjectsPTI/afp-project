@@ -31,7 +31,7 @@ belül kattintással válaszolni.
 
 
 ## 7. Képernyőterv
-
+A tervek megtalálhatóak a DesignTervRft file-ban.
 
 ## 8. Forgatókönyv
 A felhasználó az oldal megnyitása után az üdvözlőképernyőre kerül.
