@@ -4,7 +4,7 @@ A rendszer célja egy interaktív kvízjáték, amellyel az ügyfél cégét ism
 A kvízjátékhoz tartozó kérdéseket és a válaszokat egy config fájlban tároljuk.
 
 ## 2. Üzleti folyamatok modellje
-![Üzleti Folyamatok Modellje]
+![Üzleti Folyamatok Modellje](BusinessUseCase.png)
 
 ## 3. Követelmények
 * Funkcionális
