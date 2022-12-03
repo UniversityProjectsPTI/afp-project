@@ -3,7 +3,6 @@ import {useState, useEffect} from "react";
 
 const Timer = (props: any) => {
 
-    const [isCountedDown, setIsCountedDown] = useState(false);
     const [remainingTime, setRemainingTime] = useState(props.time);
     const [percentageNum, setPercentageNum] = useState(100);
 
@@ -14,7 +13,6 @@ const Timer = (props: any) => {
 
     useEffect(() => {
         if (remainingTime === 0) {
-            setIsCountedDown(true);
             onEnd();
         } else {
             const intervalID = setInterval(() => {
