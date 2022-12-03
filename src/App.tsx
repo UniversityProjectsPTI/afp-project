@@ -10,7 +10,7 @@ function App() {
    };
 
   return (
-    <div className="bg-[#333333] h-screen">
+    <div className="bg-[#333333] h-[100vh]">
       <div>
         {screens[activeScreen]}
       </div>
