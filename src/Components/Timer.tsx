@@ -9,6 +9,7 @@ const Timer = (props: any) => {
     useEffect(() => {
         if (remainingTime === 0) {
             setIsCountedDown(true);
+            onEnd();
         } else {
             const intervalID = setInterval(() => {
                 setRemainingTime(remainingTime - 1);
