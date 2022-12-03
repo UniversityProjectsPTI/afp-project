@@ -1,5 +1,4 @@
 import React from 'react';
-import Timer from "../Components/Timer";
 
 const HomeScreen = (props: any) => {
     return (
