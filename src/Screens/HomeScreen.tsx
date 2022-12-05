@@ -2,8 +2,8 @@ import React from 'react';
 
 const HomeScreen = (props: any) => {
     return (
-        <div>
-            <h2 className="font-bold text-2xl text-white">Home screen</h2>
+        <div className="flex justify-center h-screen items-center flex-col">
+            <h2 className="font-bold text-4xl text-[#ffd428] uppercase">Üdvözöllek!</h2>
         </div>
     );
 };

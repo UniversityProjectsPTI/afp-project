@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import HomeScreen from "./Screens/HomeScreen";
+import GamesScreen from "./Screens/GamesScreen";
+import QuizScreen from "./Screens/QuizScreen";
 
 function App() {
 
    const [activeScreen, setActiveScreen]: any = useState("homeScreen");
 
    const screens: any = {
-     homeScreen: <HomeScreen/>,
+       homeScreen: <HomeScreen/>,
+       games: <GamesScreen/>,
+       quizGame: <QuizScreen/>
    };
 
   return (
