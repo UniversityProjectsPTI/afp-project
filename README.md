@@ -42,3 +42,9 @@ Van lehetőség arra is, hogy diák licence-t aktiválj. Ebben az esetben elérh
 
 Említés szintjén a VSCode-ot hoznám fel, de ha lehet a JetBrains termékeket részesítsük előnyben.
 
+## csapattagok listája
+- Sinkó Ábel
+- Tarhos László
+- Tanyi Győző
+- Antal Zoltán
+- Zsák Zoltán
