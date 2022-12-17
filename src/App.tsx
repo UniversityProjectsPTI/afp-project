@@ -8,7 +8,7 @@ function App() {
    const [activeScreen, setActiveScreen]: any = useState("homeScreen");
 
    const screens: any = {
-       homeScreen: <HomeScreen/>,
+       homeScreen: <HomeScreen setActiveScreen={setActiveScreen}/>,
        games: <GamesScreen/>,
        quizGame: <QuizScreen/>
    };
