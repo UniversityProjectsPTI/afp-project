@@ -1,5 +1,3 @@
-export{}
-
 interface IAnswer {
     id: number;
     answer: String;
@@ -8,7 +6,7 @@ interface IAnswer {
 interface ICard {
     id: number;
     cardQuestion: String;
-    cardAnswers: IAnswer []
+    cardAnswers: IAnswer [];
     correctAnswer: number;
     cardImage: String;
 }
@@ -162,4 +160,6 @@ const cardConfig: ICard[] = [
         correctAnswer: 2,
         cardImage: 'Images/CardImages/q000042.png'
     }
-]
+];
+
+export default cardConfig;
