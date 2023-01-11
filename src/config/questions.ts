@@ -163,5 +163,3 @@ const cardConfig: ICard[] = [
         cardImage: 'Images/CardImages/q000042.png'
     }
 ]
-
-
