@@ -22,8 +22,14 @@ const QuizScreen = (props: any) => {
                 {gameQuestions[currentQuestion].cardQuestion}
             </div>
 
-            
-
+            {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
+                    return (
+                        <div className="flex-row cursor-pointer" key={answerItem.id}>
+                            {answerItem.answer}
+                        </div>
+                    );
+                })}
+        
         </Card>
     </div>
     );
