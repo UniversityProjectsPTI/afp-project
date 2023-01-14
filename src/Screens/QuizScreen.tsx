@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../Components/Card';
+import QuizCounterHead from '../Components/QuizCounterHead';
+import NavigationButton from '../Components/NavigationButton';
+import questions from '../config/questions';
 
 const QuizScreen = (props: any) => {
     return (
