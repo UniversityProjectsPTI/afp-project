@@ -14,7 +14,6 @@ const QuizScreen = (props: any) => {
     const [isAnswered, setIsAnswered] = useState(false);
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
     const [solution, setSolution] = useState("");
-    const [isTimeUp, setIsTimeUp] = useState(false);
 
     const gameQuestions = {...questions};
 
