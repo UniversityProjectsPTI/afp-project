@@ -8,13 +8,17 @@ const EndGameSummary = (props: any) => {
                 <div className="mb-2">
                     Játék vége
                 </div>
-                <div>
+                <div className="mb-3">
                     Elért pontok: {props.correctAnswers}
+                </div>
+                <div className="text-lg">
+                    Köszönjük, hogy velünk játszottál.<br/>
+                    Kérlek térj vissza főmenübe.
                 </div>
 
                 <div  className='flex justify-center'>
                     <NavigationButton setActiveScreen={props.setActiveScreen}
-                                      nextScreen={'games'}>Vége</NavigationButton>
+                                      nextScreen={'games'}>Vissza</NavigationButton>
                 </div>
             </div>
 
