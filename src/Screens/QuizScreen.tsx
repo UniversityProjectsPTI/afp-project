@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Card from '../Components/Card';
 import QuizCounterHead from '../Components/QuizCounterHead';
-import NavigationButton from '../Components/NavigationButton';
 import questions from '../Config/questions';
 import AnswerItem from "../Components/AnswerItem";
 import QuizEvaluation from "../Components/QuizEvaluation";
