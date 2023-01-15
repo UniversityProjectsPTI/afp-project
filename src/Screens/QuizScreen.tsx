@@ -56,10 +56,10 @@ const QuizScreen = (props: any) => {
                         <div>
                             {isAnswered && isAnswerCorrect &&
                                 <QuizEvaluation>
-                                        <div>
+                                        <div className="pb-1">
                                             Gratulálok!
                                         </div>
-                                        <div>
+                                        <div  className="pb-1">
                                             A válaszod helyes!
                                         </div>
                                         <div className="flex-row cursor-pointer" onClick={() => nextQuestion()}>
@@ -72,10 +72,10 @@ const QuizScreen = (props: any) => {
                             {isAnswered && !isAnswerCorrect &&
                                 <QuizEvaluation>
                                     <div>
-                                        <div>
+                                        <div className="pb-1">
                                             Sajnos a válaszod helytelen!
                                         </div>
-                                        <div>
+                                        <div className="pb-1">
                                             A helyes válasz: <span className="underline">{solution}</span>
                                         </div>
                                         <div className="flex-row cursor-pointer" onClick={() => nextQuestion()}>
