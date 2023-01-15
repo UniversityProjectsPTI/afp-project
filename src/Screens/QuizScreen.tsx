@@ -13,6 +13,7 @@ const QuizScreen = (props: any) => {
     const [isGameEnd, setIsGameEnd] = useState(false);
     const [isAnswered, setIsAnswered] = useState(false);
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+    const [solution, setSolution] = useState("");
     const [isTimeUp, setIsTimeUp] = useState(false);
 
     const gameQuestions = {...questions};
@@ -20,9 +21,10 @@ const QuizScreen = (props: any) => {
     const handleAnswerClick = (ansid: number) => {
         if (isAnswered) return;
         setIsAnswered(true);
+        setSolution(gameQuestions[currentQuestion].cardAnswers[gameQuestions[currentQuestion].correctAnswer-1].answer.toString());
         if (ansid === gameQuestions[currentQuestion].correctAnswer) {
             setCorrectAnswers(correctAnswers+1);
-            setIsAnswerCorrect(true)
+            setIsAnswerCorrect(true);
         }
     };
 
@@ -72,7 +74,7 @@ const QuizScreen = (props: any) => {
                             <div>
                                 Sajnos a válaszod helytelen!
                             </div>
-                            <div>A helyes válasz: </div>
+                            <div>A helyes válasz: </div>{solution}
                         </div> :
                         <div></div>
                     }
