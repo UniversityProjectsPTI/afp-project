@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Card from '../Components/Card';
 import QuizCounterHead from '../Components/QuizCounterHead';
-import NavigationButton from '../Components/NavigationButton';
 import questions from '../Config/questions';
+import AnswerItem from "../Components/AnswerItem";
+import QuizEvaluation from "../Components/QuizEvaluation";
+import EndGameSummary from "../Components/EndGameSummary";
 
 const QuizScreen = (props: any) => {
 
@@ -11,39 +13,60 @@ const QuizScreen = (props: any) => {
     const [correctAnswers, setCorrectAnswers] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [isGameEnd, setIsGameEnd] = useState(false);
+    const [isAnswered, setIsAnswered] = useState(false);
+    const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+    const [solution, setSolution] = useState("");
 
     const gameQuestions = {...questions};
 
     const handleAnswerClick = (ansid: number) => {
-        if (ansid === gameQuestions[currentQuestion].correctAnswer)
+        if (isAnswered) return;
+        setIsAnswered(true);
+        setSolution(gameQuestions[currentQuestion].cardAnswers[gameQuestions[currentQuestion].correctAnswer-1].answer.toString());
+        if (ansid === gameQuestions[currentQuestion].correctAnswer) {
             setCorrectAnswers(correctAnswers+1);
-
-        if (quizCounter !== 3){
-            setQuizCounter(quizCounter+1);
-            setCurrentQuestion(currentQuestion+1);
-        } else {
-            setIsGameEnd(true);
+            setIsAnswerCorrect(true);
         }
     };
 
-    return (
-        <div className="flex justify-center p-2">
-        <Card className="flex flex-row">
-            
-            <div className="flex-row">
-                {gameQuestions[currentQuestion].cardQuestion}
-            </div>
+    const nextQuestion = () => {
+        if (quizCounter !== 3){
+            setQuizCounter(quizCounter+1);
+            setCurrentQuestion(currentQuestion+1);
+            setIsAnswered(false);
+            setIsAnswerCorrect(false);
+        } else {
+            setIsGameEnd(true);
+        }
+    }
 
-            {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
-                    return (
-                        <div className="flex-row cursor-pointer" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
-                            {answerItem.answer}
+    return (
+        <div className="flex justify-center pt-6">
+            <Card additionClass={'mx-20'}>
+                {!isGameEnd ?
+                    <div>
+                        <QuizCounterHead currentQuestion={quizCounter} questionNumbers={quizQuestions}/>
+
+                        <div className="flex-row text-xl mb-5">
+                            {gameQuestions[currentQuestion].cardQuestion}
                         </div>
-                    );
-                })}
-        
-        </Card>
-    </div>
+
+                        {isAnswered ?
+                                <QuizEvaluation isCorrectAnswer={isAnswerCorrect} nextQuestion={nextQuestion} solution={solution}/>
+                            :
+                                <div>
+                                    <AnswerItem gameQuestions={gameQuestions} currentQuestion={currentQuestion} handleAnswerClick={handleAnswerClick}/>
+                                </div>
+                        }
+                    </div>
+                    :
+                    <EndGameSummary correctAnswers={correctAnswers} setActiveScreen={props.setActiveScreen}/>
+                }
+            </Card>
+            <div className="max-w-[600px] mt-20">
+                <img src={gameQuestions[currentQuestion].cardImage.toString()} alt="" className="object-none rounded-lg"/>
+            </div>
+        </div>
     );
 };
 
