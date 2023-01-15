@@ -3,7 +3,6 @@ import Card from '../Components/Card';
 import QuizCounterHead from '../Components/QuizCounterHead';
 import NavigationButton from '../Components/NavigationButton';
 import questions from '../Config/questions';
-import AnswerButton from "../Components/AnswerButton";
 import AnswerItem from "../Components/AnswerItem";
 
 const QuizScreen = (props: any) => {

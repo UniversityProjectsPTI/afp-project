@@ -3,7 +3,7 @@ import AnswerButton from "./AnswerButton";
 
 const AnswerItem = (props: any) => {
     return (
-        <div className="text-left mx-24">
+        <div className="text-left mx-4">
             {props.gameQuestions[props.currentQuestion].cardAnswers.map((answerItem: any) => {
                 return (
                     <div onClick={() => props.handleAnswerClick(answerItem.id)}>
