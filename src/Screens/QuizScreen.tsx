@@ -51,13 +51,13 @@ const QuizScreen = (props: any) => {
                             {gameQuestions[currentQuestion].cardQuestion}
                         </div>
 
-                        <AnswerItem gameQuestions={gameQuestions} currentQuestion={currentQuestion} handleAnswerClick={handleAnswerClick}/>
-
-                        <div>
-                            {isAnswered &&
+                        {isAnswered ?
                                 <QuizEvaluation isCorrectAnswer={isAnswerCorrect} nextQuestion={nextQuestion} solution={solution}/>
-                            }
-                        </div>
+                            :
+                                <div>
+                                    <AnswerItem gameQuestions={gameQuestions} currentQuestion={currentQuestion} handleAnswerClick={handleAnswerClick}/>
+                                </div>
+                        }
                     </div>
                     :
                     <EndGameSummary correctAnswers={correctAnswers} setActiveScreen={props.setActiveScreen}/>
