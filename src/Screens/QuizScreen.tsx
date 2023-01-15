@@ -11,21 +11,31 @@ const QuizScreen = (props: any) => {
     const [correctAnswers, setCorrectAnswers] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [isGameEnd, setIsGameEnd] = useState(false);
+    const [isAnswered, setIsAnswered] = useState(false);
+    const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
     const [isTimeUp, setIsTimeUp] = useState(false);
 
     const gameQuestions = {...questions};
 
     const handleAnswerClick = (ansid: number) => {
-        if (ansid === gameQuestions[currentQuestion].correctAnswer)
+        if (isAnswered) return;
+        setIsAnswered(true);
+        if (ansid === gameQuestions[currentQuestion].correctAnswer) {
             setCorrectAnswers(correctAnswers+1);
+            setIsAnswerCorrect(true)
+        }
+    };
 
+    const nextQuestion = () => {
         if (quizCounter !== 3){
             setQuizCounter(quizCounter+1);
             setCurrentQuestion(currentQuestion+1);
+            setIsAnswered(false);
+            setIsAnswerCorrect(false);
         } else {
             setIsGameEnd(true);
         }
-    };
+    }
 
     return (
         <div className="flex justify-center p-2">
@@ -37,13 +47,42 @@ const QuizScreen = (props: any) => {
                     {gameQuestions[currentQuestion].cardQuestion}
                 </div>
                 <div>
-                {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
-                        return (
-                            <div className="flex-row cursor-pointer" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
-                                {answerItem.answer}
+                    {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
+                                return (
+                                    <div className="flex-row cursor-pointer" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
+                                        {answerItem.answer}
+                                    </div>
+                                );
+                            })}
+                </div><br/>
+                <div>
+                    {isAnswered && isAnswerCorrect ?
+                        <div>
+                            <div>
+                                Gratulálok!
                             </div>
-                        );
-                    })}
+                            <div>A válaszod helyes!</div>
+                        </div> :
+                        <div></div>
+                    }
+                </div>
+                <div>
+                    {isAnswered && !isAnswerCorrect ?
+                        <div>
+                            <div>
+                                Sajnos a válaszod helytelen!
+                            </div>
+                            <div>A helyes válasz: </div>
+                        </div> :
+                        <div></div>
+                    }
+                </div><br/><br/>
+                <div>
+                    {isAnswered ?
+                    <div className="flex-row cursor-pointer" onClick={() => nextQuestion()}>
+                        OK
+                    </div>
+                    :<div></div>}
                 </div>
             </div>
             :
