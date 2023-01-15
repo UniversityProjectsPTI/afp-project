@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from '../Components/Card';
 import QuizCounterHead from '../Components/QuizCounterHead';
 import NavigationButton from '../Components/NavigationButton';
-import questions from '../Config/questions';
+import questions from '../config/questions';
 
 const QuizScreen = (props: any) => {
 
@@ -11,6 +11,7 @@ const QuizScreen = (props: any) => {
     const [correctAnswers, setCorrectAnswers] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [isGameEnd, setIsGameEnd] = useState(false);
+    const [isTimeUp, setIsTimeUp] = useState(false);
 
     const gameQuestions = {...questions};
 
@@ -41,7 +42,7 @@ const QuizScreen = (props: any) => {
                         </div>
                     );
                 })}
-        
+
         </Card>
     </div>
     );
