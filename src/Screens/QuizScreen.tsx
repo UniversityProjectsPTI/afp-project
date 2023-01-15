@@ -54,35 +54,8 @@ const QuizScreen = (props: any) => {
                         <AnswerItem gameQuestions={gameQuestions} currentQuestion={currentQuestion} handleAnswerClick={handleAnswerClick}/>
 
                         <div>
-                            {isAnswered && isAnswerCorrect &&
-                                <QuizEvaluation>
-                                        <div className="pb-1">
-                                            Gratulálok!
-                                        </div>
-                                        <div  className="pb-1">
-                                            A válaszod helyes!
-                                        </div>
-                                        <div className="font-bold underline cursor-pointer" onClick={() => nextQuestion()}>
-                                            OK
-                                        </div>
-                                </QuizEvaluation>
-                            }
-                        </div>
-                        <div>
-                            {isAnswered && !isAnswerCorrect &&
-                                <QuizEvaluation>
-                                    <div>
-                                        <div className="pb-1">
-                                            Sajnos a válaszod helytelen!
-                                        </div>
-                                        <div className="pb-1">
-                                            A helyes válasz: <span className="underline">{solution}</span>
-                                        </div>
-                                        <div className="font-bold underline cursor-pointer" onClick={() => nextQuestion()}>
-                                            OK
-                                        </div>
-                                    </div>
-                                </QuizEvaluation>
+                            {isAnswered &&
+                                <QuizEvaluation isCorrectAnswer={isAnswerCorrect} nextQuestion={nextQuestion} solution={solution}/>
                             }
                         </div>
                     </div>
