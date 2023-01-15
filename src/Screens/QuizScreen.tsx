@@ -5,6 +5,7 @@ import NavigationButton from '../Components/NavigationButton';
 import questions from '../Config/questions';
 import AnswerItem from "../Components/AnswerItem";
 import QuizEvaluation from "../Components/QuizEvaluation";
+import EndGameSummary from "../Components/EndGameSummary";
 
 const QuizScreen = (props: any) => {
 
@@ -87,19 +88,7 @@ const QuizScreen = (props: any) => {
                         </div>
                     </div>
                     :
-                    <div className='justify-center'>
-                        <div className='text-xl'>
-                            Játék vége
-                        </div><br/>
-                        <div>
-                            Elért pontok: {correctAnswers}
-                        </div>
-                        <br/>
-                        <div  className='flex justify-center'>
-                            <NavigationButton setActiveScreen={props.setActiveScreen}
-                                              nextScreen={'games'}>Új játék</NavigationButton>
-                        </div>
-                    </div>
+                    <EndGameSummary correctAnswers={correctAnswers} setActiveScreen={props.setActiveScreen}/>
                 }
             </Card>
             <div className="max-w-[600px] mt-20">
