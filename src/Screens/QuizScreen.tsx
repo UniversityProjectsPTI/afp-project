@@ -30,18 +30,37 @@ const QuizScreen = (props: any) => {
     return (
         <div className="flex justify-center p-2">
         <Card className="flex flex-row">
-            
-            <div className="flex-row">
-                {gameQuestions[currentQuestion].cardQuestion}
-            </div>
 
-            {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
-                    return (
-                        <div className="flex-row cursor-pointer" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
-                            {answerItem.answer}
-                        </div>
-                    );
-                })}
+            {!isGameEnd ?
+            <div>
+                <div className="flex-row">
+                    {gameQuestions[currentQuestion].cardQuestion}
+                </div>
+                <div>
+                {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
+                        return (
+                            <div className="flex-row cursor-pointer" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
+                                {answerItem.answer}
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+            :
+            <div className='justify-center'>
+                <div className='text-xl'>
+                    Játék vége
+                </div><br/>
+                <div>
+                    Elért pontok: {correctAnswers}
+                </div>
+                <br/>
+                <div  className='flex justify-center'>
+                    <NavigationButton setActiveScreen={props.setActiveScreen}
+                                      nextScreen={'games'}>Új játék</NavigationButton>
+                </div>
+            </div>
+            }
 
         </Card>
     </div>
