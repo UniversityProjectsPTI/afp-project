@@ -4,6 +4,7 @@ import QuizCounterHead from '../Components/QuizCounterHead';
 import NavigationButton from '../Components/NavigationButton';
 import questions from '../Config/questions';
 import AnswerButton from "../Components/AnswerButton";
+import AnswerItem from "../Components/AnswerItem";
 
 const QuizScreen = (props: any) => {
 
@@ -49,22 +50,9 @@ const QuizScreen = (props: any) => {
                         <div className="flex-row text-xl mb-5">
                             {gameQuestions[currentQuestion].cardQuestion}
                         </div>
-                        <div className="text-left mx-24">
-                            {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
-                                        return (
-                                            <div onClick={() => handleAnswerClick(answerItem.id)}>
-                                                <div className="inline-flex justify-center items-center my-3">
-                                                    <div>
-                                                        <AnswerButton answerNumber={answerItem.id}/>
-                                                    </div>
-                                                    <div className="cursor-pointer" key={answerItem.id}>
-                                                       {answerItem.answer}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                        </div><br/>
+
+                        <AnswerItem gameQuestions={gameQuestions} currentQuestion={currentQuestion} handleAnswerClick={handleAnswerClick}/>
+
                         <div>
                             {isAnswered && isAnswerCorrect &&
                                 <div>
