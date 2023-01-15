@@ -49,11 +49,11 @@ const QuizScreen = (props: any) => {
                         <div className="flex-row text-xl mb-5">
                             {gameQuestions[currentQuestion].cardQuestion}
                         </div>
-                        <div>
+                        <div className="text-left mx-24">
                             {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
                                         return (
-                                            <div className="cursor-pointer" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
-                                                {answerItem.answer}
+                                            <div className="cursor-pointer my-5" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
+                                               {answerItem.answer}
                                             </div>
                                         );
                                     })}
