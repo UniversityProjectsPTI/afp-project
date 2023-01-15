@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from '../Components/Card';
 import QuizCounterHead from '../Components/QuizCounterHead';
 import NavigationButton from '../Components/NavigationButton';
-import questions from '../config/questions';
+import questions from '../Config/questions';
 
 const QuizScreen = (props: any) => {
 
@@ -45,6 +45,8 @@ const QuizScreen = (props: any) => {
 
             {!isGameEnd ?
             <div>
+                <QuizCounterHead currentQuestion={quizCounter} questionNumbers={quizQuestions}/>
+
                 <div className="flex-row">
                     {gameQuestions[currentQuestion].cardQuestion}
                 </div>
