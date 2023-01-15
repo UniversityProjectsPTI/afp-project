@@ -41,72 +41,70 @@ const QuizScreen = (props: any) => {
 
     return (
         <div className="flex justify-center p-2">
-        <Card className="flex flex-row">
+            <Card className="flex flex-row">
+                {!isGameEnd ?
+                    <div>
+                        <QuizCounterHead currentQuestion={quizCounter} questionNumbers={quizQuestions}/>
 
-            {!isGameEnd ?
-            <div>
-                <QuizCounterHead currentQuestion={quizCounter} questionNumbers={quizQuestions}/>
-
-                <div className="flex-row">
-                    {gameQuestions[currentQuestion].cardQuestion}
-                </div>
-                <div>
-                    {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
-                                return (
-                                    <div className="flex-row cursor-pointer" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
-                                        {answerItem.answer}
+                        <div className="flex-row">
+                            {gameQuestions[currentQuestion].cardQuestion}
+                        </div>
+                        <div>
+                            {gameQuestions[currentQuestion].cardAnswers.map((answerItem) => {
+                                        return (
+                                            <div className="flex-row cursor-pointer" onClick={() => handleAnswerClick(answerItem.id)} key={answerItem.id}>
+                                                {answerItem.answer}
+                                            </div>
+                                        );
+                                    })}
+                        </div><br/>
+                        <div>
+                            {isAnswered && isAnswerCorrect ?
+                                <div>
+                                    <div>
+                                        Gratulálok!
                                     </div>
-                                );
-                            })}
-                </div><br/>
-                <div>
-                    {isAnswered && isAnswerCorrect ?
+                                    <div>A válaszod helyes!</div>
+                                </div> :
+                                <div></div>
+                            }
+                        </div>
                         <div>
-                            <div>
-                                Gratulálok!
-                            </div>
-                            <div>A válaszod helyes!</div>
-                        </div> :
-                        <div></div>
-                    }
-                </div>
-                <div>
-                    {isAnswered && !isAnswerCorrect ?
+                            {isAnswered && !isAnswerCorrect ?
+                                <div>
+                                    <div>
+                                        Sajnos a válaszod helytelen!
+                                    </div>
+                                    <div>A helyes válasz: </div>{solution}
+                                </div> :
+                                <div></div>
+                            }
+                        </div><br/><br/>
                         <div>
-                            <div>
-                                Sajnos a válaszod helytelen!
+                            {isAnswered ?
+                            <div className="flex-row cursor-pointer" onClick={() => nextQuestion()}>
+                                OK
                             </div>
-                            <div>A helyes válasz: </div>{solution}
-                        </div> :
-                        <div></div>
-                    }
-                </div><br/><br/>
-                <div>
-                    {isAnswered ?
-                    <div className="flex-row cursor-pointer" onClick={() => nextQuestion()}>
-                        OK
+                            :<div></div>}
+                        </div>
                     </div>
-                    :<div></div>}
-                </div>
-            </div>
-            :
-            <div className='justify-center'>
-                <div className='text-xl'>
-                    Játék vége
-                </div><br/>
-                <div>
-                    Elért pontok: {correctAnswers}
-                </div>
-                <br/>
-                <div  className='flex justify-center'>
-                    <NavigationButton setActiveScreen={props.setActiveScreen}
-                                      nextScreen={'games'}>Új játék</NavigationButton>
-                </div>
-            </div>
-            }
-
-        </Card>
-    </div>
+                    :
+                    <div className='justify-center'>
+                        <div className='text-xl'>
+                            Játék vége
+                        </div><br/>
+                        <div>
+                            Elért pontok: {correctAnswers}
+                        </div>
+                        <br/>
+                        <div  className='flex justify-center'>
+                            <NavigationButton setActiveScreen={props.setActiveScreen}
+                                              nextScreen={'games'}>Új játék</NavigationButton>
+                        </div>
+                    </div>
+                }
+            </Card>
+        </div>
     );
 };
 
