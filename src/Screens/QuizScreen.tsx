@@ -4,6 +4,7 @@ import QuizCounterHead from '../Components/QuizCounterHead';
 import NavigationButton from '../Components/NavigationButton';
 import questions from '../Config/questions';
 import AnswerItem from "../Components/AnswerItem";
+import QuizEvaluation from "../Components/QuizEvaluation";
 
 const QuizScreen = (props: any) => {
 
@@ -54,29 +55,34 @@ const QuizScreen = (props: any) => {
 
                         <div>
                             {isAnswered && isAnswerCorrect &&
-                                <div>
-                                    <div>
-                                        Gratulálok!
-                                    </div>
-                                    <div>A válaszod helyes!</div>
-                                </div>
+                                <QuizEvaluation>
+                                        <div>
+                                            Gratulálok!
+                                        </div>
+                                        <div>
+                                            A válaszod helyes!
+                                        </div>
+                                        <div className="flex-row cursor-pointer" onClick={() => nextQuestion()}>
+                                            OK
+                                        </div>
+                                </QuizEvaluation>
                             }
                         </div>
                         <div>
                             {isAnswered && !isAnswerCorrect &&
-                                <div>
+                                <QuizEvaluation>
                                     <div>
-                                        Sajnos a válaszod helytelen!
+                                        <div>
+                                            Sajnos a válaszod helytelen!
+                                        </div>
+                                        <div>
+                                            A helyes válasz: <span className="underline">{solution}</span>
+                                        </div>
+                                        <div className="flex-row cursor-pointer" onClick={() => nextQuestion()}>
+                                            OK
+                                        </div>
                                     </div>
-                                    <div>A helyes válasz: </div>{solution}
-                                </div>
-                            }
-                        </div>
-                        <div>
-                            {isAnswered &&
-                                <div className="flex-row cursor-pointer" onClick={() => nextQuestion()}>
-                                    OK
-                                </div>
+                                </QuizEvaluation>
                             }
                         </div>
                     </div>

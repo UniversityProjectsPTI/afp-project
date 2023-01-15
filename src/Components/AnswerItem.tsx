@@ -11,7 +11,7 @@ const AnswerItem = (props: any) => {
                             <div>
                                 <AnswerButton answerNumber={answerItem.id}/>
                             </div>
-                            <div className="cursor-pointer" key={answerItem.id}>
+                            <div className="cursor-pointer text-xl" key={answerItem.id}>
                                 {answerItem.answer}
                             </div>
                         </div>
