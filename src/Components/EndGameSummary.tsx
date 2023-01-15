@@ -3,9 +3,9 @@ import NavigationButton from "./NavigationButton";
 
 const EndGameSummary = (props: any) => {
     return (
-        <div>
-            <div className='justify-center'>
-                <div className='text-xl'>
+        <div className="mt-5 text-center">
+            <div className='justify-center text-2xl'>
+                <div className="mb-2">
                     Játék vége
                 </div>
                 <div>
@@ -14,7 +14,7 @@ const EndGameSummary = (props: any) => {
 
                 <div  className='flex justify-center'>
                     <NavigationButton setActiveScreen={props.setActiveScreen}
-                                      nextScreen={'games'}>Új játék</NavigationButton>
+                                      nextScreen={'games'}>Vége</NavigationButton>
                 </div>
             </div>
 
