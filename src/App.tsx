@@ -10,7 +10,7 @@ function App() {
    const screens: any = {
        homeScreen: <HomeScreen setActiveScreen={setActiveScreen}/>,
        games: <GamesScreen setActiveScreen={setActiveScreen}/>,
-       quizGame: <QuizScreen/>
+       quizGame: <QuizScreen setActiveScreen={setActiveScreen}/>
    };
 
   return (
