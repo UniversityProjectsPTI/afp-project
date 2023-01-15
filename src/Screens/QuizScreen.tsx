@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Card from '../Components/Card';
 import QuizCounterHead from '../Components/QuizCounterHead';
-import questions from '../Config/questions';
+import questions from '../config/questions';
 import AnswerItem from "../Components/AnswerItem";
 import QuizEvaluation from "../Components/QuizEvaluation";
 import EndGameSummary from "../Components/EndGameSummary";
