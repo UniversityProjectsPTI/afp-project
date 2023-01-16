@@ -55,7 +55,7 @@ const QuizScreen = (props: any) => {
                         </div>
 
                         {isAnswered || isCountedDown ?
-                                <QuizEvaluation isCorrectAnswer={isAnswerCorrect} nextQuestion={nextQuestion} solution={solution}/>
+                                <QuizEvaluation isCountedDown={isCountedDown} isCorrectAnswer={isAnswerCorrect} nextQuestion={nextQuestion} solution={solution}/>
                             :
                                 <div>
                                     <AnswerItem gameQuestions={gameQuestions} currentQuestion={currentQuestion} handleAnswerClick={handleAnswerClick}/>
