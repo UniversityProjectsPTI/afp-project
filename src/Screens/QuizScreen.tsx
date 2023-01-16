@@ -5,6 +5,7 @@ import questions from '../config/questions';
 import AnswerItem from "../Components/AnswerItem";
 import QuizEvaluation from "../Components/QuizEvaluation";
 import EndGameSummary from "../Components/EndGameSummary";
+import Timer from "../Components/Timer";
 
 const QuizScreen = (props: any) => {
 
@@ -16,6 +17,7 @@ const QuizScreen = (props: any) => {
     const [isAnswered, setIsAnswered] = useState(false);
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
     const [solution, setSolution] = useState("");
+    const [isCountedDown, setIsCountedDown] = useState(false);
 
     const gameQuestions = {...questions};
 
@@ -35,6 +37,7 @@ const QuizScreen = (props: any) => {
             setCurrentQuestion(currentQuestion+1);
             setIsAnswered(false);
             setIsAnswerCorrect(false);
+            setIsCountedDown(false);
         } else {
             setIsGameEnd(true);
         }
@@ -51,11 +54,12 @@ const QuizScreen = (props: any) => {
                             {gameQuestions[currentQuestion].cardQuestion}
                         </div>
 
-                        {isAnswered ?
-                                <QuizEvaluation isCorrectAnswer={isAnswerCorrect} nextQuestion={nextQuestion} solution={solution}/>
+                        {isAnswered || isCountedDown ?
+                                <QuizEvaluation isCountedDown={isCountedDown} isCorrectAnswer={isAnswerCorrect} nextQuestion={nextQuestion} solution={solution}/>
                             :
                                 <div>
                                     <AnswerItem gameQuestions={gameQuestions} currentQuestion={currentQuestion} handleAnswerClick={handleAnswerClick}/>
+                                    <Timer time="15" setIsCountedDown={setIsCountedDown}/>
                                 </div>
                         }
                     </div>

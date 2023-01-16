@@ -20,15 +20,29 @@ const QuizEvaluation = (props: any) => {
                 </div>
            :
                 <div>
-                    <div className="pb-1">
-                        Sajnos a válaszod helytelen!
-                    </div>
-                    <div className="pb-1">
-                        A helyes válasz: <span className="underline">{props.solution}</span>
-                    </div>
-                    <div className="font-bold underline cursor-pointer" onClick={() => props.nextQuestion()}>
-                        OK
-                    </div>
+                    {props.isCountedDown ? 
+                        <div>
+                            <div className="pb-1">
+                                Sajnos lejárt az időd!
+                            </div>
+                            <div className="font-bold underline cursor-pointer" onClick={() => props.nextQuestion()}>
+                                OK
+                            </div>
+                        </div>    
+                        :
+                        <div>
+                            <div className="pb-1">
+                                Sajnos a válaszod helytelen!
+                            </div>
+                            <div className="pb-1">
+                                A helyes válasz: <span className="underline">{props.solution}</span>
+                            </div>
+                            <div className="font-bold underline cursor-pointer" onClick={() => props.nextQuestion()}>
+                                OK
+                            </div>
+                        </div>    
+                    }
+                    
                 </div>
            }
        </div>
