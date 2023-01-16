@@ -25,7 +25,7 @@ const Timer = (props: any) => {
 
 
     const onEnd = () => {
-        //
+        props.setIsCountedDown(true);
     }
 
     return (
