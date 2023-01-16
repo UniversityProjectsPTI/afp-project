@@ -25,9 +25,6 @@ const QuizEvaluation = (props: any) => {
                             <div className="pb-1">
                                 Sajnos lejárt az időd!
                             </div>
-                            <div className="pb-1">
-                                A helyes válasz: <span className="underline">{props.solution}</span>
-                            </div>
                             <div className="font-bold underline cursor-pointer" onClick={() => props.nextQuestion()}>
                                 OK
                             </div>

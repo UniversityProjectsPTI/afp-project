@@ -59,7 +59,7 @@ const QuizScreen = (props: any) => {
                             :
                                 <div>
                                     <AnswerItem gameQuestions={gameQuestions} currentQuestion={currentQuestion} handleAnswerClick={handleAnswerClick}/>
-                                    <Timer time="5" setIsCountedDown={setIsCountedDown}/>
+                                    <Timer time="15" setIsCountedDown={setIsCountedDown}/>
                                 </div>
                         }
                     </div>
