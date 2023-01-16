@@ -9,3 +9,6 @@ Teszt sorszám | Funkció | Eredmény | Státusz | Megjegyzés | Tesztelő szem�
 4 | Szerver indítás Linux rendszer alatt (npm start) | `Module not found` hiba | sikertelen | - | Tanyi Győző | 2023.01.15.
 5 | Szerver indítás Linux rendszer alatt (npm start) | Sikeres indítás. | sikeres | - | Tanyi Győző | 2023.01.15.
 6 | Új GUI elemek tesztelése (gombok, számláló, képek, stb.) | A komponensek megjelennek és működnek | sikeres | - | Tanyi Győző | 2023.01.15.
+7 | A játék indulásának tesztelése mobil eszközön | Az üdvözlő képernyő és a játék elindul. | sikeres | - | Tanyi Győző | 2023.01.16.
+8 | A játékmenet tesztelése mobil eszközön álló képernyőn | A gombok és a szöveges tartalom megjelenik, a képek nem. | nem teljes | Képernyőképek: `Screenshot_20230116_083529_Firefox.jpg` `Screenshot_20230116_083534_Firefox.jpg` `Screenshot_20230116_083549_Firefox.jpg` | Tanyi Győző | 2023.01.16.
+9 | A játékmenet tesztelése mobil eszközön fekvő képernyőn | Minden tartalom megfelelő megjelenik | sikeres | Képernyőképek: `Screenshot_20230116_083604_Firefox.jpg` `Screenshot_20230116_083612_Firefox.jpg` | Tanyi Győző | 2023.01.16.
