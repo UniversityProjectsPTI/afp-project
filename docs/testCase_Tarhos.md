@@ -9,3 +9,4 @@
 | 4             | Játékindító képernyőn Játék indítása gomb funkciója        | A gomb megnyomása átvisz a játék képernyőre, és elkezdődik a játék.                              | sikeres | -					  | Tarhos László    | 2023.01.16. |
 | 5             | Kérdések és válaszok megjelenítése a játék indítása után   | A játék indítása után a kérdések és a válaszok sikeresen megjelennek.                            | sikeres | -                             | Tarhos László    | 2023.01.16. |
 | 6             | Válaszadás gomb komponensének tesztelése                   | A válaszadáshoz szükséges kerek gombok megjelenítése sikeres.                                    | sikeres | -                             | Tarhos László    | 2023.01.16. |
+| 7             | Kvíz kérdések számlálójának tesztelése			     | A kvíz számláló helyesen működik: kijelzi, hogy hány kérdés van összesen és, ahol épp tartunk.   | sikeres | -                             | Tarhos László    | 2023.01.16. |
